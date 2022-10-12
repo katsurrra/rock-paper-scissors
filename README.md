@@ -1,2 +1,2 @@
 # rock-paper-scissors
-Classic Rock Paper Scissors game with JavaScript.
+Rock Paper Scissors game that can be played opening the browser's console.

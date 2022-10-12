@@ -10,7 +10,7 @@ function getComputerChoice() {
   return choice;
 }
 
-function playSingleRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   playerSelection =
     playerSelection[0].toUpperCase() + playerSelection.toLowerCase().slice(1);
 
@@ -25,3 +25,36 @@ function playSingleRound(playerSelection, computerSelection) {
   
     return result;
 }
+
+function game() {
+  let userScore;
+  let pcScore;
+  let userChoice;
+  let pcChoice;
+  let result;
+
+  for (let i = 0; i < 5; i++) {
+    userChoice = prompt("Rock, Paper or Scissors?");
+    pcChoice = getComputerChoice();
+    result = playRound(userChoice,pcChoice);
+    
+    console.log(result);
+
+    if (result.includes('Draw')) {
+      userScore += 1;
+      pcScore += 1;
+    }
+    
+    else if (result.includes('Win'))
+      userScore += 1;
+    
+    else pcScore += 1;
+  }
+  if (userScore > pcScore) 
+    console.log("You win the game!");
+  else if (userScore == pcScore)
+    console.log("This game is a draw!");
+  else console.log("You lose the game!");
+}
+
+game();
